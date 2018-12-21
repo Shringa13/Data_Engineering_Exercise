@@ -39,3 +39,37 @@ System maintains 2 log files separately as a raw text files which are produced b
         -> The order_event is generally set to "submitted order", "no more items in inventory", "employee started packing", "employee    completed packing", "employee shipped package to customer".  
         -> Sample line from the log file:  
             2018-02-10 16:20:01 order_id=123123, employee_id=103, order_event=employee shipped package to customer  
+
+
+## TASKS PERFORMED:  
+
+**(TASK-1)**  
+1) Produce the schema diagrams for the two OLTP databases.  
+2) You can use whatever tools are available to you and provide an artifact that can be reviewed.  
+For example, you can use an ER diagramming tool or draw it on paper then provide a PDF or photo of the diagrams.   
+
+**(TASK-2)**  
+1) Generate reports: create the SQL statements to get the following information from the OLTP databases:  
+-> All orders during the month of December 2017.  
+-> All orders that were shipped to customers this week.  
+-> All customers that have at least submitted one order last year, but have not submitted any order this year.  
+Show the customer id, customer first name and last name, number of orders the previous year.  
+-> All employees that have had at least 5 disputed (order_status = DISPUTED) orders in the last 6 months.  
+Show the employee information, and the number of disputed orders for the employee.  
+
+**(TASK-3)**  
+-> Design the schema for the data mart (use a star schema) that will answer the business questions listed below. Also, write the
+SQL statements for ETL.  
+**ETL**  
+-> Write the SQL statements for extracting data from the two transactional databases (shopping, and order and fulfillment
+databases). Also include any transformations that you think are needed.  
+-> Write regular expressions, scripts, etc. that you think are appropriate.  
+**Business questions**  
+-> Write the SQL statements for answering the following business questions:  
+-> What is the customer conversion rate from when a customer starts shopping to submitting an order? The information will be used to create a sales funnel visualization tool.  
+For Example:  
+**1) New traffic = 100%**  
+**2) Added Items to Cart = 80%**  
+**3) Submitted Order = 20%**  
+**4) Received Order = 15%**
+-> What are the ZIP codes of users who browsed for products but did not submit an order? What products did they browse?  
